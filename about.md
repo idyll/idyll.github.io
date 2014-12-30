@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm [Mark (Idyll)]([github.com/idyll) and really I just like to build things.
+I'm [Mark (Idyll)](https://github.com/idyll) and really I just like to build things.
 
 Often I will find myself struggling to solve a problem that I feel should be easy.
 
