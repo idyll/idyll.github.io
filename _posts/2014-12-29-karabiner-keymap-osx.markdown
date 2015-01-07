@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Keymapping on Yosemite for your Keyboard with Karabiner"
+subtitle: "Mapping Keys on a Logitech K811"
 date:   2014-12-29 18:00:00
 categories: osx yosemite devtools
 ---
@@ -22,7 +23,7 @@ __NOTE:__ _there's no reason why we can't use this with another keyboard. For ex
 
 You will need to download and install [Karabiner](https://pqrs.org/osx/karabiner/).
 
-Next you need log out the keys you intent to use with [DEBUG MODE](https://pqrs.org/osx/karabiner/document.html.en#debugmode). In my case it took a while to figure it out, but the logitech keyboard uses a combination of a key and a modifier key to activate mission control. 
+Next you need log out the keys you intent to use with [DEBUG MODE](https://pqrs.org/osx/karabiner/document.html.en#debugmode). In my case it took a while to figure it out, but the logitech keyboard uses a combination of a key and a modifier key to activate mission control.
 
 To determine this I first noticed that the single keypress actually activated 2 keys. The only way that would work is if at least one of them was a modifier key. So then I mashed on the modifier keys until I figured out which one it was.
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Google Apps Oauth2"
+subtitle:  "Authenticating YOUR Users"
 date:   2014-11-20 22:29:28
 categories: ruby rails oauth
 ---
@@ -79,7 +80,7 @@ Then we need to add the method ```User.find_for_google_oauth2``` to our user mod
     unless user
       user = User.new( provider:auth.provider, uid:auth.uid, name: auth.info.name,
         username: auth.info.email, email: auth.info.email, password: SecureRandom.base64(24) )
-      # if your setup for nil passwords, you can also leave the password nil. 
+      # if your setup for nil passwords, you can also leave the password nil.
       user.save
     end
     user
