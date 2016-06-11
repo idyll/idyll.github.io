@@ -11,5 +11,5 @@ github_username:  idyll
 # Build settings
 markdown: kramdown
 
-highlighter: pygments
+highlighter: pygments.rb
 github: [Repository metadata]
