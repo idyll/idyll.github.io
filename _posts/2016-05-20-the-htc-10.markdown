@@ -2,7 +2,7 @@
 layout: post
 title:  "The HTC 10"
 subtitle: "A Review of HTC's new Flagship Phone"
-date:   2016-06-11 18:00:00
+date:   2016-05-20 18:00:00
 categories: android htc
 ---
 
