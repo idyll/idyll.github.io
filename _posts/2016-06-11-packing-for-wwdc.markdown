@@ -43,7 +43,8 @@ I used to carry a Sierra Wireless AirCard 763S Mobile Hotspot but at this point 
 
 You should also pack a wired ethernet adapter for downloading larger files. Apple sets up wired
 ethernet download stations (usually at the lunch tables) and trying to get installers or Xcode
-over the WiFi won't be fun.
+over the WiFi won't be fun. _My friend Dave has pointed out that large downloads might be
+ethernet only. So don't forget your adapter or you'll be buying one._
 
 ### The Other Stuff ###
 
