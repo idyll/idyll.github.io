@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "The HTC 10"
+subtitle: "A Review of HTC's new Flagship Phone"
+date:   2016-06-11 18:00:00
+categories: android htc
+---
+
+I largely consider the Nexus One to be the best Android device ever made. It wasn't trying to
+copy the iPhone -- it had a unique and innovative design. For this reason I have
+a bit of a soft spot for HTC.
+
+Similarly I dislike Samsung for both their lack of innovation and their depiction of iPhone
+users in their commercials.
+
+Thus, I typically will buy an HTC when I'm due for an Android upgrade. I skipped over the HTC 9
+so I was overdue when the HTC 10 came out.
+
+### First Impressions ###
+
+The screen is bright and vivid. The phone is a good size -- not too large, but big enough for what I do. The Phone feels great in your hands without looking like an iPhone.
+
+I find the integrated fingerprint sensor to be better than most other Android devices that I've
+played with it terms of speed of response.
+
+As a 12" Macbook owner, I am possibly over-excited about the phone's USB-C. Partially because it means one less adaptor but also because the laptop adaptor actually charges the phone in the new super fast USB-C mode. I don't think it's taken more than 45 minutes to charge since I started using it.
+
+### HTC Ice View ###
+
+Ice View is a super cool idea. Alter the display inside a case so that you can quickly see
+information or access basic notifications.
+
+It's one of the things I like most about the customizations HTC brings to Android.
+
+Unfortunately the HTC case required to use Ice View is expensive for what it is ($50) and feels ultra cheap. It's a travesty to wrap such a nice phone in such an awful case.
+
+### HTC Android -- Update Soon ###
+
+Here's where I am going to stop this review.
+
+It's not fare to judge a phone until you've used it for a month or two, especially if it has
+OS customizations.
+
+Once I get a little more time on the device I will update this review to include my thoughts on HTCs
+customizations to Android and how the phone performs in daily use.
+
+
+Be safe, have fun, and take care of each other.
+
+-- MM
