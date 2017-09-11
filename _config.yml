@@ -12,3 +12,4 @@ github_username:  idyll
 markdown: kramdown
 highlighter: rouge
 github: [Repository metadata]
+theme: "ed."
