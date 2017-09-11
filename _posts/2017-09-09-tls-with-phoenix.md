@@ -28,14 +28,14 @@ takes too long to be practical. I have excluded it for the time being as it make
 but then store it in a git repos.
 
 However, your deployment process may be different so if you can take advatage of it, generate it as follows:
-```
+{% highlight sh %}
 openssl dhparam -out dh-params.pem 2048
-```
+{% endhighlight %}
 
 Beyond that we are encrypting our keyfile and then only provide the password to the production ENV.
 The resulting config looks as follows:
 
-```
+{% highlight yaml linenos %}
 config :phoenix, YourApp.Endpoint,
   https: [
            port: 443,
@@ -59,12 +59,12 @@ config :phoenix, YourApp.Endpoint,
            honor_cipher_order: true,
            max_connections: :infinity
         ]
-```
+{% endhighlight %}
 
 In my case, we use distillery and read much of our configuration from the ENV. And we are not generating the DHPARAMS
 So our file looks more like this:
 
-```
+{% highlight yaml linenos %}
 config :phoenix, YourApp.Endpoint,
   https: [
            port: "${PHX_TLS_PORT}",
@@ -87,7 +87,7 @@ config :phoenix, YourApp.Endpoint,
            honor_cipher_order: true,
            max_connections: :infinity
         ]
-```
+{% endhighlight %}
 
 Note that we are setting files paths dynamically which allows us to switch between certificate sets between staging
 and production ENVs.
