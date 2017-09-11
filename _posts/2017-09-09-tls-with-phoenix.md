@@ -38,27 +38,27 @@ The resulting config looks as follows:
 {% highlight elixir %}
 config :phoenix, YourApp.Endpoint,
   https: [
-           port: 443,
-           host: "yourapp.example.com",
-           cacertfile: "/path/to/certs/cacert.pem",
-           certfile: "/path/to/certs/cert.pem",
-           keyfile: "/path/to/certs/key.pem",
-           password: "keyfile-password-so-read-this-from-the-env",
-           versions: [:"tlsv1.2"],
-           dhfile: "/path/to/certs/dh-params.pem",
-           ciphers: [
-                      "ECDHE-ECDSA-AES128-GCM-SHA256", "ECDHE-ECDSA-AES256-GCM-SHA384", "ECDHE-ECDSA-AES128-SHA",
-                      "ECDHE-ECDSA-AES256-SHA", "ECDHE-ECDSA-AES128-SHA256", "ECDHE-ECDSA-AES256-SHA384",
-                      "ECDHE-RSA-AES128-GCM-SHA256", "ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-SHA",
-                      "ECDHE-RSA-AES256-SHA", "ECDHE-RSA-AES128-SHA256", "ECDHE-RSA-AES256-SHA384",
-                      "DHE-RSA-AES128-GCM-SHA256", "DHE-RSA-AES256-GCM-SHA384", "DHE-RSA-AES128-SHA",
-                      "DHE-RSA-AES256-SHA", "DHE-RSA-AES128-SHA256", "DHE-RSA-AES256-SHA256"
-                    ],
-           secure_renegotiate: true,
-           reuse_sessions: true,
-           honor_cipher_order: true,
-           max_connections: :infinity
-        ]
+    port: 443,
+    host: "yourapp.example.com",
+    cacertfile: "/path/to/certs/cacert.pem",
+    certfile: "/path/to/certs/cert.pem",
+    keyfile: "/path/to/certs/key.pem",
+    password: "keyfile-password-so-read-this-from-the-env",
+    versions: [:"tlsv1.2"],
+    dhfile: "/path/to/certs/dh-params.pem",
+    ciphers: [
+      "ECDHE-ECDSA-AES128-GCM-SHA256", "ECDHE-ECDSA-AES256-GCM-SHA384", "ECDHE-ECDSA-AES128-SHA",
+      "ECDHE-ECDSA-AES256-SHA", "ECDHE-ECDSA-AES128-SHA256", "ECDHE-ECDSA-AES256-SHA384",
+      "ECDHE-RSA-AES128-GCM-SHA256", "ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-SHA",
+      "ECDHE-RSA-AES256-SHA", "ECDHE-RSA-AES128-SHA256", "ECDHE-RSA-AES256-SHA384",
+      "DHE-RSA-AES128-GCM-SHA256", "DHE-RSA-AES256-GCM-SHA384", "DHE-RSA-AES128-SHA",
+      "DHE-RSA-AES256-SHA", "DHE-RSA-AES128-SHA256", "DHE-RSA-AES256-SHA256"
+    ],
+    secure_renegotiate: true,
+    reuse_sessions: true,
+    honor_cipher_order: true,
+    max_connections: :infinity
+  ]
 {% endhighlight %}
 
 In my case, we use distillery and read much of our configuration from the ENV. And we are not generating the DHPARAMS
@@ -67,26 +67,26 @@ So our file looks more like this:
 {% highlight elixir %}
 config :phoenix, YourApp.Endpoint,
   https: [
-           port: "${PHX_TLS_PORT}",
-           host: "${PHX_HOST}",
-           cacertfile: "${CA_FILE_PATH}",
-           certfile: "${CERTFILE_PATH}",
-           keyfile: "${KEYFILE_PATH}",
-           password: "${KEYFILE_PASSWORD}",
-           versions: [:"tlsv1.2"],
-           ciphers: [
-                      "ECDHE-ECDSA-AES128-GCM-SHA256", "ECDHE-ECDSA-AES256-GCM-SHA384", "ECDHE-ECDSA-AES128-SHA",
-                      "ECDHE-ECDSA-AES256-SHA", "ECDHE-ECDSA-AES128-SHA256", "ECDHE-ECDSA-AES256-SHA384",
-                      "ECDHE-RSA-AES128-GCM-SHA256", "ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-SHA",
-                      "ECDHE-RSA-AES256-SHA", "ECDHE-RSA-AES128-SHA256", "ECDHE-RSA-AES256-SHA384",
-                      "DHE-RSA-AES128-GCM-SHA256", "DHE-RSA-AES256-GCM-SHA384", "DHE-RSA-AES128-SHA",
-                      "DHE-RSA-AES256-SHA", "DHE-RSA-AES128-SHA256", "DHE-RSA-AES256-SHA256"
-                    ],
-           secure_renegotiate: true,
-           reuse_sessions: true,
-           honor_cipher_order: true,
-           max_connections: :infinity
-        ]
+    port: "${PHX_TLS_PORT}",
+    host: "${PHX_HOST}",
+    cacertfile: "${CA_FILE_PATH}",
+    certfile: "${CERTFILE_PATH}",
+    keyfile: "${KEYFILE_PATH}",
+    password: "${KEYFILE_PASSWORD}",
+    versions: [:"tlsv1.2"],
+    ciphers: [
+      "ECDHE-ECDSA-AES128-GCM-SHA256", "ECDHE-ECDSA-AES256-GCM-SHA384", "ECDHE-ECDSA-AES128-SHA",
+      "ECDHE-ECDSA-AES256-SHA", "ECDHE-ECDSA-AES128-SHA256", "ECDHE-ECDSA-AES256-SHA384",
+      "ECDHE-RSA-AES128-GCM-SHA256", "ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-SHA",
+      "ECDHE-RSA-AES256-SHA", "ECDHE-RSA-AES128-SHA256", "ECDHE-RSA-AES256-SHA384",
+      "DHE-RSA-AES128-GCM-SHA256", "DHE-RSA-AES256-GCM-SHA384", "DHE-RSA-AES128-SHA",
+      "DHE-RSA-AES256-SHA", "DHE-RSA-AES128-SHA256", "DHE-RSA-AES256-SHA256"
+    ],
+    secure_renegotiate: true,
+    reuse_sessions: true,
+    honor_cipher_order: true,
+    max_connections: :infinity
+  ]
 {% endhighlight %}
 
 Note that we are setting files paths dynamically which allows us to switch between certificate sets between staging
