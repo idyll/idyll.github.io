@@ -35,7 +35,7 @@ openssl dhparam -out dh-params.pem 2048
 Beyond that we are encrypting our keyfile and then only provide the password to the production ENV.
 The resulting config looks as follows:
 
-{% highlight yaml linenos %}
+{% highlight elixir linenos %}
 config :phoenix, YourApp.Endpoint,
   https: [
            port: 443,
@@ -64,14 +64,14 @@ config :phoenix, YourApp.Endpoint,
 In my case, we use distillery and read much of our configuration from the ENV. And we are not generating the DHPARAMS
 So our file looks more like this:
 
-{% highlight yaml linenos %}
+{% highlight elixir linenos %}
 config :phoenix, YourApp.Endpoint,
   https: [
            port: "${PHX_TLS_PORT}",
            host: "${PHX_HOST}",
            cacertfile: "${CA_FILE_PATH}",
            certfile: "${CERTFILE_PATH}",
-           keyfile: "${KEYFILE_PATH},
+           keyfile: "${KEYFILE_PATH}",
            password: "${KEYFILE_PASSWORD}",
            versions: [:"tlsv1.2"],
            ciphers: [
