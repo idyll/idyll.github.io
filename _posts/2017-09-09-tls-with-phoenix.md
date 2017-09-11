@@ -19,9 +19,9 @@ There's two things that I wanted to do when I set this up:
 
 My suggestions here are based on the following:
 
-  - https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices
-  - http://ezgr.net/increasing-security-erlang-ssl-cowboy/
-  - https://ninenines.eu/docs/en/ranch/1.3/manual/ranch_ssl/
+  - [https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices](https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)
+  - [http://ezgr.net/increasing-security-erlang-ssl-cowboy/](http://ezgr.net/increasing-security-erlang-ssl-cowboy/)
+  - [https://ninenines.eu/docs/en/ranch/1.3/manual/ranch_ssl/](https://ninenines.eu/docs/en/ranch/1.3/manual/ranch_ssl/)
 
 One challenge that we have is the DH params group file. I'd prefer to generate this on the server but it
 takes too long to be practical. I have excluded it for the time being as it makes not sense to generate it
