@@ -4,6 +4,7 @@ title:  "Tips for SFO and WWDC"
 subtitle: ""
 date:   2016-06-11 18:00:00
 categories: apple wwdc software sfo
+author: mark
 ---
 
 San Francisco is easily one of my top 5 favorite cities.

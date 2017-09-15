@@ -4,6 +4,7 @@ title:  "Google Apps Oauth2"
 subtitle:  "Authenticating YOUR Users"
 date:   2014-11-20 22:29:28
 categories: ruby rails oauth
+author: idyll
 ---
 Google has deprecated their openid provider for Google Apps for Business. Super annoying, because the only option is to move over to their OAuth2 Google+ stuff. Here are the steps to get it going.
 

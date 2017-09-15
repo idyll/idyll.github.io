@@ -4,6 +4,7 @@ title:  "Keymapping on Yosemite for your Keyboard with Karabiner"
 subtitle: "Mapping Keys on a Logitech K811"
 date:   2014-12-29 18:00:00
 categories: osx yosemite devtools
+author: mark
 ---
 If you were a good developer this year Santa probably brought you a keyboard for Christmas. Alas, it probably doesn't have the magical Apple key that you use every day. Good news. I have your solution
 

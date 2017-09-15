@@ -4,9 +4,9 @@ title:  "Packing for WWDC"
 subtitle: "What I Bring to Apple's Yearly Developer Conference"
 date:   2016-06-11 18:00:00
 categories: apple wwdc software
+author: mark
+image: /images/posts/packing-for-wwdc.jpg
 ---
-
-![What I Pack](/assets/packing-for-wwdc.jpg)
 
 WWDC is my favorite conference. It's an intense week of being immersed in the latest
 thoughts and works from Apple and a great chance to learn from their team first hand.

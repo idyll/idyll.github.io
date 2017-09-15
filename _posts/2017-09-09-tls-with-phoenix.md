@@ -4,6 +4,7 @@ title:  "TLS for Phoenix"
 subtitle: "How to setup and lockdown Phoenix TLS config."
 date:   2017-09-09 18:00:00
 categories: phoenix elixir tls
+author: mark
 ---
 
 HTTP/2 support already available in Phoenix thanks to Cowboy2. Depending on how your load balancing was setup you may
@@ -39,7 +40,6 @@ The resulting config looks as follows:
 config :phoenix, YourApp.Endpoint,
   https: [
     port: 443,
-    host: "yourapp.example.com",
     cacertfile: "/path/to/certs/cacert.pem",
     certfile: "/path/to/certs/cert.pem",
     keyfile: "/path/to/certs/key.pem",
@@ -68,7 +68,6 @@ So our file looks more like this:
 config :phoenix, YourApp.Endpoint,
   https: [
     port: "${PHX_TLS_PORT}",
-    host: "${PHX_HOST}",
     cacertfile: "${CA_FILE_PATH}",
     certfile: "${CERTFILE_PATH}",
     keyfile: "${KEYFILE_PATH}",
