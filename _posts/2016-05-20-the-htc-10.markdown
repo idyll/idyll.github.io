@@ -5,6 +5,7 @@ subtitle: "A Review of HTC's new Flagship Phone"
 date:   2016-05-20 18:00:00
 categories: android htc
 author: mark
+image: /images/posts/htc-10.png
 ---
 
 I largely consider the Nexus One to be the best Android device ever made. It wasn't trying to

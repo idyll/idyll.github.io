@@ -5,6 +5,7 @@ subtitle: ""
 date:   2016-06-11 18:00:00
 categories: apple wwdc software sfo
 author: mark
+image: /images/posts/wwdc.jpg
 ---
 
 San Francisco is easily one of my top 5 favorite cities.
