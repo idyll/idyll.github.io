@@ -6,19 +6,19 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title:              An Idyll Place
-logo:               # Logo image URL
-description:        Idealized thoughts on crafting software.
-baseurl:            '' # The subpath of your site, e.g. /blog
-url:                'http://blog.idyll.io' # The base hostname & protocol for your site
-twitter:            https://twitter.com/idyl_code
-github_username:    idyll
+title: An Idyll Place
+logo: # Logo image URL
+description: Idealized thoughts on crafting software.
+baseurl: "" # The subpath of your site, e.g. /blog
+url: "https://blog.idyll.io" # The base hostname & protocol for your site
+twitter: https://twitter.com/idyll_code
+github_username: idyll
 
-markdown:  kramdown
+markdown: kramdown
 highlighter: rouge
-github: [Repository metadata]
+github: idyll
 permalink: pretty
-paginate:  9
+paginate: 9
 sass:
   style: compressed
 
@@ -35,24 +35,24 @@ exclude:
   - Gemfile.lock
 
 # Tags
-tag_page_dir:         tag
-tag_page_layout:      tag_page
-tag_permalink_style:  pretty
+tag_page_dir: tag
+tag_page_layout: tag_page
+tag_permalink_style: pretty
 
 # Pages path
 defaults:
   - scope:
-      path: '_pages'
+      path: "_pages"
     values:
       permalink: /:basename:output_ext
 
 # Authors
 authors:
   mark:
-    name:             Mark Madsen
-    bio:              When I started writing Apps and APIs, phones had buttons!
-    gravatar:         https://s.gravatar.com/avatar/c2fa64af0819fa9efd35f22c7ce08ae3?s=150
-    email:            mm@anml.io
-    website:          http://bog.idyll.io
-    github_username:  idyll
+    name: Mark Madsen
+    bio: When I started writing Apps and APIs, phones had buttons!
+    gravatar: https://s.gravatar.com/avatar/c2fa64af0819fa9efd35f22c7ce08ae3?s=150
+    email: mm@anml.io
+    website: http://bog.idyll.io
+    github_username: idyll
     twitter_username: "idyll_code"
