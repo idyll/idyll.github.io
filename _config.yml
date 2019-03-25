@@ -11,12 +11,12 @@ logo: # Logo image URL
 description: Idealized thoughts on crafting software.
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "https://blog.idyll.io" # The base hostname & protocol for your site
-twitter: https://twitter.com/idyll_code
+twitter: "https://twitter.com/idyll_code"
 github_username: idyll
 
 markdown: kramdown
 highlighter: rouge
-github: idyll
+github: "https://github.com/idyll"
 permalink: pretty
 paginate: 9
 sass:
