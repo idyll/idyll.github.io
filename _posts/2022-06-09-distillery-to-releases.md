@@ -5,6 +5,7 @@ subtitle: "For Phoenix Applications Running in Kubernetes"
 date: 2022-06-09 22:00:00
 categories: programming
 author: mark
+image: /images/posts/pine.jpg
 ---
 
 OTP25 was released a couple of weeks ago bringing JIT support to ARM (aka Apple M1). However, Distillery
