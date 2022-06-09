@@ -1,0 +1,93 @@
+I"�<p>Half of my twitter feed was all up in arms over a thread about <em>10x programmers</em> this week.
+I am purposely not going to repost the thread or the comments because I don’t think any good
+will come from it, but essentially it turned into pitchfork style mob criticizing the author for
+encourage a toxic work environment.</p>
+
+<h3 id="the-myth-of-the-10x-programmer">The Myth of the 10x Programmer</h3>
+
+<p>In early silicon valley lore, legend speaks of a mythical 10x programmer, that could write code
+faster than 10 of their piers. They single handedly slayed the dragon and defended the city…
+<em>or something like that.</em></p>
+
+<p>Like all myth I think this is actually based in reality.</p>
+
+<p>Around 20 years ago when I first got into the industry there was a bunch of large changes that really
+changed the way we program in industry. Before Linux and the rise of OpenSource/GitHub knowledge wasn’t
+really shared between organizations. Even the most trivial things were treated as trade secrets. You
+couldn’t just learn something - you had to reverse engineer it or be taught about it.</p>
+
+<p>At that time the dotcom bubble was in full force, all needing programmers.
+More programmers than there were. So startups were hiring people without any programming experience at all. In some cases
+that worked out really well and other cases it didn’t. The result was that we ended up with a bunch of people in the
+industry that weren’t setup to succeed - they lacked training and mentorship and never really got great experience.</p>
+
+<p>When the dotcom bubble burst it made a mess of the industry. And this gave way to the startup scene. Startups were coming up with crazy disruptive ideas. Some good, some evil.</p>
+
+<p>And then all of a sudden we were trying to share everything. You could read other peoples code. Share ideas.
+Collaborate with people you’d never get a change to actually meet in person.</p>
+
+<p>As we got better at sharing code the whole industry seemed to level up. I remember working with C# for the first time
+on a project and thinking that code that used to take months to write could be accomplished in weeks. And Eventually
+I found Ruby/Rails which made development (well, lets say prototyping) even quicker.</p>
+
+<p>During this age of enlightenment the myth was born. Back then I think the term that was popular was “Rockstar” developers.
+I actually think that name makes sense, in a “rock the stadium and then get drunk and trash the hotel room” sorta way.</p>
+
+<p>But the reason why these developers seemed to be so highly productive was a combination of things:</p>
+
+<ol>
+  <li>They were often taking on loads of technical debt. (And while this is often bad, in some cases this really paid off for them.)</li>
+  <li>Everything was simpler back then, in bad ways. They didn’t worry about security or privacy.</li>
+  <li>It possible to fit a whole codebase in your brain, especially if you wrote most of it. The cognative load was much lighter.</li>
+  <li>New tools made writing code faster.</li>
+  <li>They found ways to cheat that we no long find acceptable. (And probably shouldn’t have then.)</li>
+  <li>They had some good ideas.</li>
+</ol>
+
+<p>What made them look like a <em>10x programmer</em> or not, depended on how they interacted with the rest of the development
+team. The people who I think of as great developers lift the level of the whole team and help everyone achieve more.
+The contribution of someone like this isn’t always obvious and sometimes you only really see it retrospectively.</p>
+
+<p>There were definitely developers at that time who were self centered and only cared about delivering code. And if
+you were on that kind of team it was probably dysfunctional making the “Rockstar” developer look great and the
+rest of the team look like they couldn’t keep up. Depending on who you talk to there are tonnes of stories about
+developers like this. Sometimes they were hugely successful and sometimes they weren’t. It depended on a lot of things
+and the external factors needed to produce them or make the successful don’t exist anymore.</p>
+
+<p>In general I think we’ve also learned to value different things since then. We don’t like “clever” code anymore - readable
+code is much preferred. <em>Move fast and break things</em> doesn’t work anymore. People are important. Being inclusive is important.</p>
+
+<h3 id="writing-software-is-like-writing-music">Writing Software is like Writing Music</h3>
+
+<p>Software development is a bit of a creative art. It can be formulaic but it also requires creativity to solve problems.</p>
+
+<p>I think of it like the difference between knowing how to play a guitar vs. being Tom Petty.</p>
+
+<p>You can’t look at someone’s physical appearance and predict their musical ability. You have
+to hear them play. Listen to their work. And event then that only tells you if they know how to play music - writing
+music is entirely different.</p>
+
+<p>Writing a song I think is a pretty good analogy for software. You require some amount of base knowledge to do either:
+how to play an instrument/how to write code. But there’s a difference between strumming some chords and writing a song
+just like there’s a difference between typing in some code and writing a program.</p>
+
+<h3 id="rockstars">Rockstars</h3>
+
+<p>I think where the talk of <em>10x developers</em> or <em>Rockstars</em> becomes really problematic is when someone tries to describe
+a person in terms of their characteristics.</p>
+
+<p>Imagine if the checklist for a Rockstar was:</p>
+
+<ul>
+  <li>known to destroy hotel rooms</li>
+  <li>into hardcore drugs</li>
+  <li>constantly drunk</li>
+  <li>self destructive</li>
+  <li>plays a specific brand of guitar</li>
+</ul>
+
+<p>That’s crazy right. That doesn’t even involve music. You end up with all sorts of disaster.</p>
+
+<p>But that’s really where we are when we talk about <em>10x programmers</em>. We’re looking for something that can’t really
+exist anymore based on characteristics that have nothing to do with their ability.</p>
+:ET

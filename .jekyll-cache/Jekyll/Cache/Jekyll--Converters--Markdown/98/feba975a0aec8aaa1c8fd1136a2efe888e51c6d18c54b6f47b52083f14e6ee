@@ -1,0 +1,3 @@
+I"Ð<p>The recent release of Cowboy 2.4.0 fixes the last bug I am aware of in its H2 implementation. When Phoenix 1.4 is
+released it will include alpha support for Cowboy 2 and thus HTTP/2 (or H2 for short).</p>
+:ET

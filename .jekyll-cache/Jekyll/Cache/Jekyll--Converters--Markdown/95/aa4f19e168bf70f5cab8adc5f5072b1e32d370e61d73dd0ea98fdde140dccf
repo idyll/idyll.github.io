@@ -1,0 +1,3 @@
+I"Ê<p>HTTP/2 support already available in Phoenix thanks to Cowboy2. Depending on how your load balancing was setup you may
+now be in a situation where you now need to termiate TLS directly on Cowboy.</p>
+:ET

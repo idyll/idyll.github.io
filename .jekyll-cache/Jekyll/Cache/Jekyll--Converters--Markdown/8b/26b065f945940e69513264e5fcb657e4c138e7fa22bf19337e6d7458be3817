@@ -1,0 +1,83 @@
+I"�<p>HTTP/2 support already available in Phoenix thanks to Cowboy2. Depending on how your load balancing was setup you may
+now be in a situation where you now need to termiate TLS directly on Cowboy.</p>
+
+<p>When I looked into it there didn’t seem to be a lot of information around it so I decided to assemble the config
+and details that I used here.</p>
+
+<p>There’s two things that I wanted to do when I set this up:</p>
+
+<ol>
+  <li>only use secure tls versions and protocols.</li>
+  <li>keep the keys encrypted.</li>
+</ol>
+
+<p>My suggestions here are based on the following:</p>
+
+<ul>
+  <li><a href="https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices">https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices</a></li>
+  <li><a href="http://ezgr.net/increasing-security-erlang-ssl-cowboy/">http://ezgr.net/increasing-security-erlang-ssl-cowboy/</a></li>
+  <li><a href="https://ninenines.eu/docs/en/ranch/1.3/manual/ranch_ssl/">https://ninenines.eu/docs/en/ranch/1.3/manual/ranch_ssl/</a></li>
+</ul>
+
+<p>One challenge that we have is the DH params group file. I’d prefer to generate this on the server but it
+takes too long to be practical. I have excluded it for the time being as it makes not sense to generate it
+but then store it in a git repos.</p>
+
+<p>However, your deployment process may be different so if you can take advatage of it, generate it as follows:</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">openssl dhparam <span class="nt">-out</span> dh-params.pem 2048</code></pre></figure>
+
+<p>Beyond that we are encrypting our keyfile and then only provide the password to the production ENV.
+The resulting config looks as follows:</p>
+
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">config</span> <span class="ss">:phoenix</span><span class="p">,</span> <span class="no">YourApp</span><span class="o">.</span><span class="no">Endpoint</span><span class="p">,</span>
+  <span class="ss">https:</span> <span class="p">[</span>
+    <span class="ss">port:</span> <span class="mi">443</span><span class="p">,</span>
+    <span class="ss">cacertfile:</span> <span class="s2">"/path/to/certs/cacert.pem"</span><span class="p">,</span>
+    <span class="ss">certfile:</span> <span class="s2">"/path/to/certs/cert.pem"</span><span class="p">,</span>
+    <span class="ss">keyfile:</span> <span class="s2">"/path/to/certs/key.pem"</span><span class="p">,</span>
+    <span class="ss">password:</span> <span class="s2">"keyfile-password-so-read-this-from-the-env"</span><span class="p">,</span>
+    <span class="ss">versions:</span> <span class="p">[</span><span class="ss">:"tlsv1.2"</span><span class="p">],</span>
+    <span class="ss">dhfile:</span> <span class="s2">"/path/to/certs/dh-params.pem"</span><span class="p">,</span>
+    <span class="ss">ciphers:</span> <span class="p">[</span>
+      <span class="s1">'ECDHE-ECDSA-AES128-GCM-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES256-GCM-SHA384'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES128-SHA'</span><span class="p">,</span>
+      <span class="s1">'ECDHE-ECDSA-AES256-SHA'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES128-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES256-SHA384'</span><span class="p">,</span>
+      <span class="s1">'ECDHE-RSA-AES128-GCM-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES256-GCM-SHA384'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES128-SHA'</span><span class="p">,</span>
+      <span class="s1">'ECDHE-RSA-AES256-SHA'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES128-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES256-SHA384'</span><span class="p">,</span>
+      <span class="s1">'DHE-RSA-AES128-GCM-SHA256'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES256-GCM-SHA384'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES128-SHA'</span><span class="p">,</span>
+      <span class="s1">'DHE-RSA-AES256-SHA'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES128-SHA256'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES256-SHA256'</span>
+    <span class="p">],</span>
+    <span class="ss">secure_renegotiate:</span> <span class="no">true</span><span class="p">,</span>
+    <span class="ss">reuse_sessions:</span> <span class="no">true</span><span class="p">,</span>
+    <span class="ss">honor_cipher_order:</span> <span class="no">true</span><span class="p">,</span>
+    <span class="ss">max_connections:</span> <span class="ss">:infinity</span>
+  <span class="p">]</span></code></pre></figure>
+
+<p>In my case, we use distillery and read much of our configuration from the ENV. And we are not generating the DHPARAMS
+So our file looks more like this:</p>
+
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">config</span> <span class="ss">:phoenix</span><span class="p">,</span> <span class="no">YourApp</span><span class="o">.</span><span class="no">Endpoint</span><span class="p">,</span>
+  <span class="ss">https:</span> <span class="p">[</span>
+    <span class="ss">port:</span> <span class="s2">"${PHX_TLS_PORT}"</span><span class="p">,</span>
+    <span class="ss">cacertfile:</span> <span class="s2">"${CA_FILE_PATH}"</span><span class="p">,</span>
+    <span class="ss">certfile:</span> <span class="s2">"${CERTFILE_PATH}"</span><span class="p">,</span>
+    <span class="ss">keyfile:</span> <span class="s2">"${KEYFILE_PATH}"</span><span class="p">,</span>
+    <span class="ss">password:</span> <span class="s2">"${KEYFILE_PASSWORD}"</span><span class="p">,</span>
+    <span class="ss">versions:</span> <span class="p">[</span><span class="ss">:"tlsv1.2"</span><span class="p">],</span>
+    <span class="ss">ciphers:</span> <span class="p">[</span>
+      <span class="s1">'ECDHE-ECDSA-AES128-GCM-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES256-GCM-SHA384'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES128-SHA'</span><span class="p">,</span>
+      <span class="s1">'ECDHE-ECDSA-AES256-SHA'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES128-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-ECDSA-AES256-SHA384'</span><span class="p">,</span>
+      <span class="s1">'ECDHE-RSA-AES128-GCM-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES256-GCM-SHA384'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES128-SHA'</span><span class="p">,</span>
+      <span class="s1">'ECDHE-RSA-AES256-SHA'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES128-SHA256'</span><span class="p">,</span> <span class="s1">'ECDHE-RSA-AES256-SHA384'</span><span class="p">,</span>
+      <span class="s1">'DHE-RSA-AES128-GCM-SHA256'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES256-GCM-SHA384'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES128-SHA'</span><span class="p">,</span>
+      <span class="s1">'DHE-RSA-AES256-SHA'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES128-SHA256'</span><span class="p">,</span> <span class="s1">'DHE-RSA-AES256-SHA256'</span>
+    <span class="p">],</span>
+    <span class="ss">secure_renegotiate:</span> <span class="no">true</span><span class="p">,</span>
+    <span class="ss">reuse_sessions:</span> <span class="no">true</span><span class="p">,</span>
+    <span class="ss">honor_cipher_order:</span> <span class="no">true</span><span class="p">,</span>
+    <span class="ss">max_connections:</span> <span class="ss">:infinity</span>
+  <span class="p">]</span></code></pre></figure>
+
+<p>Note that we are setting files paths dynamically which allows us to switch between certificate sets between staging
+and production ENVs.</p>
+:ET
