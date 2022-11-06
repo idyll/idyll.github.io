@@ -11,8 +11,8 @@ logo: # Logo image URL
 description: Idealized thoughts on crafting software.
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "https://blog.idyll.io" # The base hostname & protocol for your site
-twitter: "https://twitter.com/idyll_code"
 github_username: idyll
+mastodon: "https://mastodon.social/@idyll"
 
 markdown: kramdown
 highlighter: rouge
@@ -56,3 +56,7 @@ authors:
     website: http://bog.idyll.io
     github_username: idyll
     twitter_username: "idyll_code"
+    mastodon_username: "idyll"
+    mastodon_url: "https://mastodon.social/@idyll"
+
+plugins: [jekyll-paginate]

@@ -13,29 +13,29 @@
 
     <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--1-4-l'>
       <ul class='c-footer-list o-plain-list'>
-        {% if site.facebook %}
-          <li>
-            <a href='{{ site.facebook }}' target='_blank'>
-              <span data-icon='ei-sc-facebook' data-size='s'></span>
-              Facebook
-            </a>
-          </li>
+        {% if site.mastodon %}
+        <li>
+          <a rel="me" href='{{ site.mastodon }}' target='_blank'>
+            <span data-icon='ei-comment' data-size='s'></span>
+            Mastodon
+          </a>
+        </li>
         {% endif %}
         {% if site.twitter %}
-          <li>
-            <a href='{{ site.twitter }}' target='_blank'>
-              <span data-icon='ei-sc-twitter' data-size='s'></span>
-              Twitter
-            </a>
-          </li>
+        <li>
+          <a href='{{ site.twitter }}' target='_blank'>
+            <span data-icon='ei-sc-twitter' data-size='s'></span>
+            Twitter
+          </a>
+        </li>
         {% endif %}
         {% if site.github %}
-          <li>
-            <a href='{{ site.github }}' target='_blank'>
-              <span data-icon='ei-sc-github' data-size='s'></span>
-              Github
-            </a>
-          </li>
+        <li>
+          <a href='{{ site.github }}' target='_blank'>
+            <span data-icon='ei-sc-github' data-size='s'></span>
+            Github
+          </a>
+        </li>
         {% endif %}
       </ul>
     </div>
