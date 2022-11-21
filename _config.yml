@@ -12,7 +12,7 @@ description: Idealized thoughts on crafting software.
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "https://blog.idyll.io" # The base hostname & protocol for your site
 github_username: idyll
-mastodon: "https://mastodon.social/@idyll"
+mastodon: "https://anml.io/@idyll"
 
 markdown: kramdown
 highlighter: rouge
@@ -53,10 +53,10 @@ authors:
     bio: When I started writing Apps and APIs, phones had buttons!
     gravatar: https://s.gravatar.com/avatar/c2fa64af0819fa9efd35f22c7ce08ae3?s=150
     email: mm@anml.io
-    website: http://bog.idyll.io
+    website: http://blog.idyll.io
     github_username: idyll
     twitter_username: "idyll_code"
     mastodon_username: "idyll"
-    mastodon_url: "https://mastodon.social/@idyll"
+    mastodon_url: "https://anml.io/@idyll"
 
 plugins: [jekyll-paginate]
